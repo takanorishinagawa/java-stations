@@ -26,5 +26,17 @@ public class Main {
             this.category = category;
             this.tags = tags;
         }
+
+        float getPriceWithTax(boolean isKeigenzeiritu) {
+            float total = price;
+
+            if (isKeigenzeiritu) {
+                total += this.price * 0.08;
+            } else {
+                total += this.price * 0.1;
+            }
+
+            return total;
+        }
     }
 }
